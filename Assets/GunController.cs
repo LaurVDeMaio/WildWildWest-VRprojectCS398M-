@@ -7,6 +7,11 @@ public class GunController : MonoBehaviour
     public GameObject projectile;
     Transform launcher;
 
+    float timer = 0.75f;
+    float coolDown = 0.75f;
+
+    int bulletCount = 6;
+
     void Start()
     {
         launcher = transform.Find("launcher");
@@ -15,11 +20,24 @@ public class GunController : MonoBehaviour
     
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.One))
+        timer += Time.deltaTime;
+
+        if (OVRInput.Get(OVRInput.Button.One) && bulletCount > 0)
         {
-            var go = Instantiate(projectile, launcher.position, launcher.rotation);
-            var pc = go.GetComponent<ProjectileController>();
-            pc.Fire(this);
+            if(timer >= coolDown) {
+                var go = Instantiate(projectile, launcher.position, launcher.rotation);
+                var pc = go.GetComponent<ProjectileController>();
+                pc.Fire(this);
+                timer = 0f;
+            }
+
         }
+        else if(bulletCount < 0)
+        {
+            //play audio 
+        }
+
+
+
     }
 }
