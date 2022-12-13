@@ -7,8 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject cowboy;
 
     float t = 3.0f;
-    float speed = 3;
-
+ 
     void Update()
     {
         t -= Time.deltaTime;

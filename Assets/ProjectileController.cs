@@ -20,6 +20,7 @@ public class ProjectileController : MonoBehaviour
         if (go.tag == "Enemy")
         {
             Destroy(go.gameObject);
+            player.kills++;
 
         }
 

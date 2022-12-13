@@ -12,6 +12,8 @@ public class GunController : MonoBehaviour
 
     int bulletCount = 6;
 
+    public int kills = 0;
+
     void Start()
     {
         launcher = transform.Find("launcher");
