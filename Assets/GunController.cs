@@ -30,7 +30,7 @@ public class GunController : MonoBehaviour
                 var go = Instantiate(projectile, launcher.position, launcher.rotation);
                 var pc = go.GetComponent<ProjectileController>();
                 pc.Fire(this);
-                bulletCount--;
+                //bulletCount--;
                 timer = 0f;
             }
 
