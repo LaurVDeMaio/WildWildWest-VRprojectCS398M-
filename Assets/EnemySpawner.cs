@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
         {
             t = Random.Range(0.5f, 2.0f);
 
-            var pos = new Vector3(Random.Range(-2, 3), 1, 20);
+            var pos = new Vector3(Random.Range(-47, -45), 2, 29);
 
             Instantiate(cowboy, pos, Quaternion.identity);
             
