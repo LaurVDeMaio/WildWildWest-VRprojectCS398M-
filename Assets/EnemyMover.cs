@@ -8,6 +8,7 @@ public class EnemyMover : MonoBehaviour
     int health = 3;
     public float speed = 3;
     public GameObject player;
+    bool alive = true;
     #endregion
 
     #region Audio
@@ -31,8 +32,12 @@ public class EnemyMover : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(player.transform.position);
-        transform.Translate(-transform.right * speed * Time.deltaTime);
+
+        if (alive) {
+            transform.LookAt(player.transform.position);
+            transform.Translate(-transform.right * speed * Time.deltaTime);
+        }
+        
     }
 
     public void TakeDamage() {
@@ -45,6 +50,7 @@ public class EnemyMover : MonoBehaviour
         if (health <= 0) {
             anim.SetTrigger("Death");
             src.PlayOneShot(deathSound);
+            alive = false;
             StartCoroutine("DieCoroutine");
 
         }
