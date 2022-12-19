@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GunController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GunController : MonoBehaviour
     int bulletCount = 6;
 
     public int kills = 0;
+    public TMP_Text kill;
 
     void Start()
     {
@@ -25,8 +27,9 @@ public class GunController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        kill.text = kills.ToString("");
 
-        if (OVRInput.Get(OVRInput.Button.One) && bulletCount > 0)
+        if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.2f && bulletCount > 0)
         {
             if(timer >= coolDown) {
                 var go = Instantiate(projectile, launcher.position, launcher.rotation);

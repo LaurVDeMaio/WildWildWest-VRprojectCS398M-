@@ -10,29 +10,20 @@ public class UiController : MonoBehaviour
     public GameObject Canvas;
     public LineRenderer Laser;
 
-    GunController gc;
-
-    public TMP_Text kill;
-
     void Start()
     {
-        Canvas.SetActive(false);
-
-        gc = GetComponent<GunController>();
-       
+        //Canvas.SetActive(false);
+        
     }
 
     
     void Update()
     {
-        if (OVRInput.Get(OVRInput.RawButton.X)){
+        //if (OVRInput.Get(OVRInput.RawButton.X)){
+
             uiActive = !uiActive;
-
             Canvas.SetActive(uiActive);
-
-            kill.text = gc.kills.ToString("");
-           
-        }
+        //}
     }
 
     public void Restart()
