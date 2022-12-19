@@ -9,7 +9,7 @@ public class ProjectileController : MonoBehaviour
     public void Fire(GunController gc)
     {
         player = gc;
-        GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse); 
         Destroy(this.gameObject, 3); //change time
     }
 
