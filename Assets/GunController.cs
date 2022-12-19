@@ -7,6 +7,8 @@ public class GunController : MonoBehaviour
     public GameObject projectile;
     Transform launcher;
 
+    //may be best to replace this with a raycast - ATD
+
     float timer = 0.75f;
     float coolDown = 0.75f;
 
