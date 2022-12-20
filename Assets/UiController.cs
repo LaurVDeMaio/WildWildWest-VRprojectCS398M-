@@ -7,13 +7,19 @@ public class UiController : MonoBehaviour
 {
     bool uiActive = false;
 
-    public GameObject Canvas;
+    public GameObject KillCanvas;
     public LineRenderer Laser;
+
+    public GameObject MenuCanvas;
+    public GameObject pauseCanvas;
+    public GameObject InstructionsPanel;
 
     void Start()
     {
-        //Canvas.SetActive(false);
-        
+        MenuCanvas.SetActive(true);
+        KillCanvas.SetActive(false);
+        //pauseCanvas.SetActive(false);
+        InstructionsPanel.SetActive(false);
     }
 
     
@@ -21,10 +27,17 @@ public class UiController : MonoBehaviour
     {
         //if (OVRInput.Get(OVRInput.RawButton.X)){
 
-            uiActive = !uiActive;
-            Canvas.SetActive(uiActive);
-        //}
+            //uiActive = !uiActive;//}
+
+        //KillCanvas.SetActive(uiActive);
+        
     }
+
+    public void Instructions()
+    {
+       InstructionsPanel.SetActive(true);
+    }
+
 
     public void Restart()
     {
