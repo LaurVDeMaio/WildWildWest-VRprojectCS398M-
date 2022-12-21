@@ -13,8 +13,6 @@ public class GunController : MonoBehaviour
     float timer = 0.75f;
     float coolDown = 0.75f;
 
-    int bulletCount = 6;
-
     public int kills = 0;
     public TMP_Text kill;
 
@@ -29,22 +27,21 @@ public class GunController : MonoBehaviour
         timer += Time.deltaTime;
         kill.text = kills.ToString("");
 
-        if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.2f && bulletCount > 0)
+        if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.2f)
         {
             if(timer >= coolDown) {
                 var go = Instantiate(projectile, launcher.position, launcher.rotation);
                 var pc = go.GetComponent<ProjectileController>();
                 pc.Fire(this);
-                //bulletCount--;
                 timer = 0f;
             }
 
         }
-        else if(bulletCount < 0)
+        
+        if(kills >= 15)
         {
-            //reload
+            
         }
-
 
 
     }

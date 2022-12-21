@@ -19,7 +19,8 @@ public class ProjectileController : MonoBehaviour
 
         if (go.tag == "Enemy")
         {
-            Destroy(go.gameObject);
+            EnemyMover e = go.GetComponent<EnemyMover>();
+            e.TakeDamage();
             player.kills++;
 
         }
