@@ -14,12 +14,20 @@ public class UiController : MonoBehaviour
     public GameObject pauseCanvas;
     public GameObject InstructionsPanel;
 
+    public float countdown = 10;
+    public TMP_Text timer;
+
+    public GameObject countdownPanel;
+
+    bool begin = false;
+
     void Start()
     {
         MenuCanvas.SetActive(true);
         KillCanvas.SetActive(false);
         //pauseCanvas.SetActive(false);
         InstructionsPanel.SetActive(false);
+        countdownPanel.SetActive(false);
     }
 
     
@@ -27,9 +35,31 @@ public class UiController : MonoBehaviour
     {
         //if (OVRInput.Get(OVRInput.RawButton.X)){
 
-            //uiActive = !uiActive;//}
+        //uiActive = !uiActive;//}
 
         //KillCanvas.SetActive(uiActive);
+
+        if (OVRInput.Get(OVRInput.RawButton.B))
+        {
+            MenuCanvas.SetActive(false);
+            InstructionsPanel.SetActive(false);
+            KillCanvas.SetActive(true);
+            countdownPanel.SetActive(true);
+            begin = true;
+        }
+
+        if (begin)
+        {
+            countdown -= Time.deltaTime;
+
+            if(countdown >= 0)
+            {
+                //begin spawning
+                countdownPanel.SetActive(false);
+            }
+        }
+
+        timer.text = countdown.ToString("");
         
     }
 
