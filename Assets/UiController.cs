@@ -14,20 +14,17 @@ public class UiController : MonoBehaviour
     public GameObject pauseCanvas;
     public GameObject InstructionsPanel;
 
-    public float countdown = 10;
-    public TMP_Text timer;
+    public GameObject EnemySpawner;
 
-    public GameObject countdownPanel;
-
-    bool begin = false;
-
+    
     void Start()
     {
         MenuCanvas.SetActive(true);
         KillCanvas.SetActive(false);
         pauseCanvas.SetActive(false);
         InstructionsPanel.SetActive(false);
-        countdownPanel.SetActive(false);
+
+        EnemySpawner.SetActive(false);
     }
 
     
@@ -38,23 +35,12 @@ public class UiController : MonoBehaviour
             MenuCanvas.SetActive(false);
             InstructionsPanel.SetActive(false);
             KillCanvas.SetActive(true);
-            countdownPanel.SetActive(true);
-            begin = true;
+
+            //start spawning
+            EnemySpawner.SetActive(true);
         }
 
-        if (begin)
-        {
-            countdown -= Time.deltaTime;
-
-            if(countdown >= 0)
-            {
-                //begin spawning
-                countdownPanel.SetActive(false);
-            }
-        }
-
-        timer.text = countdown.ToString("");
-        
+       
     }
 
     public void Instructions()
@@ -70,7 +56,7 @@ public class UiController : MonoBehaviour
 
     public void Menu()
     {
-        MenuCanvas.SetActive(false);
+        KillCanvas.SetActive(false);
         pauseCanvas.SetActive(true);
         
     }
@@ -78,6 +64,15 @@ public class UiController : MonoBehaviour
     public void Resume()
     {
         pauseCanvas.SetActive(false);
-        MenuCanvas.SetActive(true);
+        KillCanvas.SetActive(true);
+    }
+
+    public void PlayGame()
+    {
+        MenuCanvas.SetActive(false);
+        KillCanvas.SetActive(true);
+
+        //start spawning
+        EnemySpawner.SetActive(true);
     }
 }
