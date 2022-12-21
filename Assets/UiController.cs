@@ -25,7 +25,7 @@ public class UiController : MonoBehaviour
     {
         MenuCanvas.SetActive(true);
         KillCanvas.SetActive(false);
-        //pauseCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
         InstructionsPanel.SetActive(false);
         countdownPanel.SetActive(false);
     }
@@ -33,12 +33,6 @@ public class UiController : MonoBehaviour
     
     void Update()
     {
-        //if (OVRInput.Get(OVRInput.RawButton.X)){
-
-        //uiActive = !uiActive;//}
-
-        //KillCanvas.SetActive(uiActive);
-
         if (OVRInput.Get(OVRInput.RawButton.B))
         {
             MenuCanvas.SetActive(false);
@@ -72,5 +66,18 @@ public class UiController : MonoBehaviour
     public void Restart()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
+    }
+
+    public void Menu()
+    {
+        MenuCanvas.SetActive(false);
+        pauseCanvas.SetActive(true);
+        
+    }
+
+    public void Resume()
+    {
+        pauseCanvas.SetActive(false);
+        MenuCanvas.SetActive(true);
     }
 }
