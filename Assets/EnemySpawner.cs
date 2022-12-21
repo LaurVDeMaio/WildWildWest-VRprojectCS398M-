@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject cowboy;
 
-    float t = 3.5f;
+    float t = 4.0f;
  
     void Update()
     {
@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (t <= 0)
         {
-            t = Random.Range(1.0f, 2.0f);
+            t = Random.Range(2.0f, 3.0f);
 
             var pos = new Vector3(Random.Range(-47, -45), 2, 29);
 

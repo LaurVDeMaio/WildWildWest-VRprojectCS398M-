@@ -52,7 +52,7 @@ public class EnemyMover : MonoBehaviour
             src.PlayOneShot(deathSound);
             alive = false;
             StartCoroutine("DieCoroutine");
-
+            GunController.kills++;
         }
     
     }

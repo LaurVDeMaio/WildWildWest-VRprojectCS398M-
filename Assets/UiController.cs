@@ -52,6 +52,7 @@ public class UiController : MonoBehaviour
     public void Restart()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
+        GunController.kills = 0;
     }
 
     public void Menu()

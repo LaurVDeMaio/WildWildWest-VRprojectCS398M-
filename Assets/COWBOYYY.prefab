@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2669046476161227429}
   - component: {fileID: 1000888573}
   - component: {fileID: 1000888572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: COWBOYYY
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -29,15 +29,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467480068098890471}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -47.36, y: 1.54, z: 28.766209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -47.36, y: 1.2, z: 28.766209}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 979394850784841414}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-2781692362198252313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6909199, y: 1, z: 0.16397476}
-  m_Center: {x: 0.004916191, y: 0, z: -0.022195816}
+  m_Size: {x: 0.6909199, y: 0.9796432, z: 0.16397476}
+  m_Center: {x: 0.004916191, y: 0.010178372, z: -0.022195816}
 --- !u!82 &-1197970958354710003
 AudioSource:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.7067604
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -198,7 +198,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -5031,7 +5031,7 @@ GameObject:
   - component: {fileID: 979394850784841414}
   - component: {fileID: 678799746455577903}
   - component: {fileID: 4413104243178564073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

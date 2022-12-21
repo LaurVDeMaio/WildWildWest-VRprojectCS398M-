@@ -13,19 +13,19 @@ public class ProjectileController : MonoBehaviour
         Destroy(this.gameObject, 3); //change time
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        var go = other.gameObject;
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    var go = other.gameObject;
 
-        if (go.tag == "Enemy")
-        {
-            EnemyMover e = go.GetComponent<EnemyMover>();
-            e.TakeDamage();
-            player.kills++;
+    //    if (go.tag == "Enemy")
+    //    {
+    //        EnemyMover e = go.GetComponent<EnemyMover>();
+    //        e.TakeDamage();
+    //        //player.kills++;
 
-        }
+    //    }
 
         
-    }
+    //}
 
 }
