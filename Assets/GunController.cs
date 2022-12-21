@@ -32,11 +32,12 @@ public class GunController : MonoBehaviour
         if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.2f)
         {
             if(timer >= coolDown) {
+                timer = 0f;
                 var go = Instantiate(projectile, launcher.position, launcher.rotation);
                 var pc = go.GetComponent<ProjectileController>();
                 pc.Fire(this);
                 src.PlayOneShot(clip);
-                timer = 0f;
+                
                 RaycastHit hitinfo;
                 if (Physics.Raycast(launcher.position, launcher.transform.forward, out hitinfo, 200f, l)) {
                     EnemyMover e = hitinfo.collider.gameObject.GetComponent<EnemyMover>();
